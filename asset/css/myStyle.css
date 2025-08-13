@@ -24,3 +24,15 @@ background-color: brown;
     margin-left: 2%;
     margin-top: 1.5%;
 }
+.body {
+  background-image: url(../img/bg.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.ungu {
+    background-color: #c7ceed;
+}
+.text-color{
+    color: darkorange;
+}
