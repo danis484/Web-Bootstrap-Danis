@@ -2,11 +2,10 @@
 <html>
 
 <head>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-        crossorigin="anonymous"></script>
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title> Web-Bootstrap </title>
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
     <link rel="stylesheet" href="asset/css/myStyle.css">
@@ -16,46 +15,60 @@
 
 <body>
    
-    <div id="section1"  class="container-fluid p-2 bg-secondary text-white text-center body">
+    <script>
+        window.addEventListener('scroll', function () {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) { // Ubah angka sesuai kebutuhan
+                navbar.classList.add('sidebar');
+            } else {
+                navbar.classList.remove('sidebar');
+            }
+        });
+    </script>
+
+    <div id="section1" class="container-fluid p-2 bg-secondary text-white text-center body">
         <pre>
                 <img src="asset/img/pulau2.jpg" alt="pulau2" class="bulat">
                 </pre>
         <h1>Selamat Datang Di Portofolio Saya</h1>
-        <p>Resize this responsive page to see the effect!</p>
+        <p></p>
     </div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-buttom">
-    <div class="container-fluid">
-        <ul class="navbar-nav">
-            <li class="nav-item"></li>
-            <a class="nav-link" href="#section1">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#section2">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#section3">History</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#section4">Service</a>
+    <nav id="navbar" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-buttom">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item"></li>
+                <a class="nav-link" href="#section1">Home</a>
+                </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#section5">Contact</a>
-            </li>
-            </li>
-        </ul>
-    </div>
+                    <a class="nav-link" href="#section2">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3">History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section4">Service</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section5">Contact</a>
+                </li>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div>
         <div id="section2" class="container-fluid p-4 ungu text-color text-center">
             <div class="container mt-3">
                 <h2>Tentang Saya</h2>
                 <p>Saya adalah mahasiswa semester 5 dari salah satu universitas yang ada di surakarta yaitu politeknik
-                    atmi surakarta.</p>
+                    atmi surakarta. Saya mengambil jurusan teknik informatika, saya sangat menyukai dunia teknologi
+                    khususnya di bidang pemrograman. Saya juga sangat menyukai dunia desain, saya sudah belajar
+                    desain sejak saya masih duduk di bangku sekolah menengah pertama. Saya juga sangat menyukai
+                    dunia fotografi, saya sudah belajar fotografi sejak saya masih duduk di bangku sekolah.</p>
                 <img src="asset/img/pulau2.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
             </div>
         </div>
 
 
-        <div id="section3" >
+        <div id="section3">
             <div class="col p-2 kuning text-white text-center">
                 <h2>History</h2>
                 <div class="row">
@@ -64,12 +77,13 @@
                             height="236">
                         <h6 class=" text-color selector">SCHOOL</h6>
 
-                        <P class="text-white">SD dan SMP saya berada di salah satu sekolah negri di wonogiri. </P>
+                        <P class="text-white">SD dan SMP saya berada di salah satu sekolah negri di wonogiri,Setelahsaya menyelesaikan pendidikan SD dan SMP saya di wionogiri saya melanjutkan bersekolah dengan tingkat yang lebih tinggi di Surakarta yaitu SMK 5 Surakarta  </P>
                     </div>
                     <div class="col-sm-6  text-white p-3">
                         <img src="asset/img/pulau2.jpg" class="img-thumbnail" alt="Cinque Terre" width="304"
                             height="236">
                         <h6 class=" text-color selector ">HOBY</h6>
+                        <p class="text-white">Hoby saya adalah bermain game, fotografi, dan desain. Saya sudah belajar fotografi sejak saya masih duduk di bangku sekolah menengah pertama. Saya juga sangat menyukai dunia desain, saya sudah belajar desain sejak saya masih duduk di bangku sekolah menengah pertama.</p>
                     </div>
                 </div>
             </div>
