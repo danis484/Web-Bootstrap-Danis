@@ -25,13 +25,18 @@ background-color: brown;
     margin-top: 1.5%;
 }
 .body {
+    
   background-image: url(../img/bg.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
+   background-position: 0 0; 
+  animation: backgroundScroll 20s linear infinite;
+   opacity: 0.5;
 }
+
 .ungu {
-    background-color: #c7ceed;
+    background-color: #515f61;
 }
 .text-color{
     color: darkorange;
@@ -41,6 +46,19 @@ background-color: brown;
 }
 .kuning {
    
-    background-color: #edecc7;
+    background-color: #616158;
 
+}
+@keyframes backgroundScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0; 
+  }
+}
+.transparan {
+      background-image: url(../img/bg.jpeg);
+    background-color: rgba(255, 0, 0, 0.5 );
+    opacity: 0.5;
 }
