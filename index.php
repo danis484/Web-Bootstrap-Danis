@@ -23,6 +23,20 @@
 </head>
 
 <body>
+   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script>
+  const socket = io('http://localhost:3000');
+  socket.on('update', rows => {
+    const cont = document.getElementById('realtime-container');
+    if (!cont) return;
+    cont.innerHTML = '';
+    rows.forEach(r => {
+      const h = document.createElement('h1'); h.textContent = r.judul;
+      const p = document.createElement('p'); p.textContent = r.keterangan;
+      cont.appendChild(h); cont.appendChild(p);
+    });
+  });
+</script>
 
     <script>
         window.addEventListener('scroll', function () {
@@ -63,17 +77,33 @@
             </ul>
         </div>
     </nav>
+
+
+
+
     <div>
+        
+    
         <div id="section2" class="container-fluid p-4 ungu text-color text-center">
             <div class="container mt-3">
-                <h2>Tentang Saya</h2>
-                <p>Saya adalah mahasiswa semester 5 dari salah satu universitas yang ada di surakarta yaitu politeknik
-                    atmi surakarta. Saya mengambil jurusan teknik informatika, saya sangat menyukai dunia teknologi
-                    khususnya di bidang pemrograman. Saya juga sangat menyukai dunia desain, saya sudah belajar
-                    desain sejak saya masih duduk di bangku sekolah menengah pertama. Saya juga sangat menyukai
-                    dunia fotografi, saya sudah belajar fotografi sejak saya masih duduk di bangku sekolah.</p>
+              
+                  </div>
+                <?php 
+                 include 'init.koneksi.db.php'; 
+                 $sql = "SELECT judul, keterangan FROM web1;";
+                 $data = $conn->query($sql);
+
+                 if ($data->num_rows > 0) {
+                     while($row = $data->fetch_assoc()) {
+                         echo "<h1>" . $row["judul"]. "</h1>";
+                         echo "<p>" . $row["keterangan"]. "</p>";
+                     }
+                 }
+                    $conn->close();
+              ?>
                 <img src="asset/img/pulau2.jpg" class="img-thumbnail polaroid" alt="Cinque Terre" width="304"
                     height="236">
+                 
             </div>
         </div>
 
