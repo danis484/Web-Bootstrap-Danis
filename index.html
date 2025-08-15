@@ -10,11 +10,20 @@
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
     <link rel="stylesheet" href="asset/css/myStyle.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
-   
+
     <script>
         window.addEventListener('scroll', function () {
             var navbar = document.getElementById('navbar');
@@ -46,7 +55,7 @@
                     <a class="nav-link" href="#section3">History</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#section4">Service</a>
+                    <a class="nav-link" href="#section4">Skill</a>
                 <li class="nav-item">
                     <a class="nav-link" href="#section5">Contact</a>
                 </li>
@@ -63,35 +72,96 @@
                     khususnya di bidang pemrograman. Saya juga sangat menyukai dunia desain, saya sudah belajar
                     desain sejak saya masih duduk di bangku sekolah menengah pertama. Saya juga sangat menyukai
                     dunia fotografi, saya sudah belajar fotografi sejak saya masih duduk di bangku sekolah.</p>
-                <img src="asset/img/pulau2.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+                <img src="asset/img/pulau2.jpg" class="img-thumbnail polaroid" alt="Cinque Terre" width="304"
+                    height="236">
             </div>
         </div>
 
 
         <div id="section3">
-            <div class="col p-2 kuning text-white text-center">
+            <div class="col p-2 kuning text-white text-center ">
                 <h2>History</h2>
                 <div class="row">
-                    <div class="col-sm-6 text-white p-3">
-                        <img src="asset/img/pulau2.jpg" class="img-thumbnail" alt="Cinque Terre" width="304"
-                            height="236">
+                    <div class="col-sm-6 text-white p-3 ">
+                        <a target="_blank" href="asset/img/pulau2.jpg">
+                            <img src="asset/img/pulau2.jpg" class="img-thumbnail polaroid" alt="Cinque Terre"
+                                width="304" height="236">
+                        </a>
                         <h6 class=" text-color selector">SCHOOL</h6>
 
-                        <P class="text-white">SD dan SMP saya berada di salah satu sekolah negri di wonogiri,Setelahsaya menyelesaikan pendidikan SD dan SMP saya di wionogiri saya melanjutkan bersekolah dengan tingkat yang lebih tinggi di Surakarta yaitu SMK 5 Surakarta  </P>
+                        <P class="text-white">SD dan SMP saya berada di salah satu sekolah negri di wonogiri,Setelahsaya
+                            menyelesaikan pendidikan SD dan SMP saya di wionogiri saya melanjutkan bersekolah dengan
+                            tingkat yang lebih tinggi di Surakarta yaitu SMK 5 Surakarta </P>
                     </div>
-                    <div class="col-sm-6  text-white p-3">
-                        <img src="asset/img/pulau2.jpg" class="img-thumbnail" alt="Cinque Terre" width="304"
-                            height="236">
+                    <div class="col-sm-6  text-white p-3 ">
+                        <a target="_blank" href="asset/img/pulau2.jpg">
+                            <img src="asset/img/pulau2.jpg" class="img-thumbnail polaroid" alt="Cinque Terre"
+                                width="304" height="236">
+                        </a>
                         <h6 class=" text-color selector ">HOBY</h6>
-                        <p class="text-white">Hoby saya adalah bermain game, fotografi, dan desain. Saya sudah belajar fotografi sejak saya masih duduk di bangku sekolah menengah pertama. Saya juga sangat menyukai dunia desain, saya sudah belajar desain sejak saya masih duduk di bangku sekolah menengah pertama.</p>
+                        <p class="text-white">Hoby saya adalah bermain game, fotografi, dan desain. Saya sudah belajar
+                            fotografi sejak saya masih duduk di bangku sekolah menengah pertama. Saya juga sangat
+                            menyukai dunia desain, saya sudah belajar desain sejak saya masih duduk di bangku sekolah
+                            menengah pertama.</p>
                     </div>
                 </div>
             </div>
             <div>
                 <div id="section4" class="col p-5 transparan text-white text-center ">
-                    <h2>Service</h2>
+                    <h2>Skill</h2>
+                    <div id="myPlot" style="width:100%; width:100px center"></div>
+
+                    <script>
+                        var data = [{
+                            x: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java'],
+                            y: [90, 80, 70, 60, 50],
+                            type: 'bar'
+                        }];
+
+                        var layout = {
+                            title: 'Skill Level',
+                            xaxis: {
+                                title: 'Skills'
+                            },
+                            yaxis: {
+                                title: 'Proficiency (%)'
+                            }
+                        };
+
+                        Plotly.newPlot('myPlot', data, layout);
+                    </script>
+
                 </div>
             </div>
+            <div id="section5" class="col p-5 bg-dark text-white text-center ">
+                <h2>Contact</h2>
+                <div class="container">
+                    <form action="/action_page.php">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                            <option value="usa">Indonesia</option>
+                        </select>
+
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."
+                            style="height:200px"></textarea>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
